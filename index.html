@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéSpawner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>PokéSpawner</h1>
+      <p class="subtitle">Catch, trade, and collect Pokémon!</p>
+      <div class="player-info">
+        <span id="player-name">Amish</span>
+        <span id="pokemon-count">0 Pokémon</span>
+      </div>
+    </header>
+
+    <main>
+      <div class="spawn-area">
+        <div id="pokemon-display">
+          <!-- Pokemon rendered by JS -->
+        </div>
+        <div class="controls">
+          <button id="spawn-btn">Spawn Random Pokémon</button>
+          <button id="catch-btn">Catch!</button>
+          <button id="manage-btn">Manage Pokémon</button>
+        </div>
+      </div>
+
+      <div class="pokemon-list" id="pokemon-list">
+        <h3>Your Pokémon</h3>
+        <ul id="pokemon-list-container">
+          <!-- Pokemon list rendered by JS -->
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <button id="trade-btn">Trade Pokémon</button>
+      <button id="discord-btn">Join Discord Server</button>
+    </footer>
+  </div>
+
+  <div id="admin-modal" class="modal">
+    <div class="modal-content">
+      <h2>Admin Commands</h2>
+      <div class="admin-form">
+        <input type="text" id="admin-command" placeholder="Enter admin command...">
+        <button id="admin-submit">Execute</button>
+      </div>
+      <p class="hint">Type <code id="admin-hint"></code> to spawn any Pokémon with perfect stats</p>
+      <div id="admin-output"></div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

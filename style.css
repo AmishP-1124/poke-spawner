@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.game-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #16213e;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #0f3460;
+}
+
+header h1 {
+  color: #e94560;
+  font-size: 2.5em;
+}
+
+.subtitle {
+  color: #888;
+  margin-top: 5px;
+}
+
+.player-info {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  background: #0f3460;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.spawn-area {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #0f3460;
+}
+
+#pokemon-display {
+  min-height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #0f3460;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.pokemon-card {
+  background: #16213e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  border: 2px solid #0f3460;
+  transition: all 0.3s ease;
+}
+
+.pokemon-card.catching {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.pokemon-card .name {
+  color: #fff;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.pokemon-card .stats {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.pokemon-card .stats span {
+  color: #e94560;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.controls button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+#spawn-btn {
+  background: #0f3460;
+  color: #fff;
+}
+
+#spawn-btn:hover {
+  background: #16213e;
+  transform: translateY(-2px);
+}
+
+#catch-btn {
+  background: #e94560;
+  color: #fff;
+}
+
+#catch-btn:hover {
+  background: #c73652;
+  transform: translateY(-2px);
+}
+
+#manage-btn {
+  background: #16213e;
+  color: #fff;
+}
+
+#manage-btn:hover {
+  background: #0f3460;
+  transform: translateY(-2px);
+}
+
+.pokemon-list {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #0f3460;
+}
+
+.pokemon-list h3 {
+  color: #e94560;
+  margin-bottom: 15px;
+}
+
+#pokemon-list-container {
+  list-style: none;
+}
+
+#pokemon-list-container li {
+  background: #16213e;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #0f3460;
+}
+
+#pokemon-list-container li .pokemon-name {
+  color: #fff;
+}
+
+#pokemon-list-container li .pokemon-level {
+  color: #888;
+}
+
+#pokemon-list-container li .pokemon-level strong {
+  color: #e94560;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #16213e;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 2px solid #0f3460;
+}
+
+footer button {
+  padding: 12px 24px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  background: #e94560;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+footer button:hover {
+  background: #c73652;
+  transform: translateY(-2px);
+}
+
+footer button#discord-btn {
+  background: #5865f2;
+}
+
+footer button#discord-btn:hover {
+  background: #4752c4;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1a1a2e;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #e94560;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #e94560;
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #0f3460;
+  border-radius: 8px;
+  background: #0f3460;
+  color: #fff;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.modal-content button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #0f3460;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #16213e;
+}
+
+.hint {
+  color: #888;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.admin-output {
+  margin-top: 15px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+.admin-output .success {
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.admin-output .error {
+  color: #f87171;
+  font-weight: bold;
+}
